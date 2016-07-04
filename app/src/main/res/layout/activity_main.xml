@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/color_blender"
+        android:id="@+id/textViewColorBlender"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/red"
+        android:id="@+id/textViewRed"
+        android:layout_marginTop="43dp"
+        android:layout_below="@+id/textViewColorBlender"
+        android:layout_alignRight="@+id/textViewBlue"
+        android:layout_alignEnd="@+id/textViewBlue" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/green"
+        android:id="@+id/textViewGreen"
+        android:layout_marginTop="31dp"
+        android:layout_below="@+id/editTextRed"
+        android:layout_alignLeft="@+id/textViewBlue"
+        android:layout_alignStart="@+id/textViewBlue" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/blue"
+        android:id="@+id/textViewBlue"
+        android:layout_marginTop="36dp"
+        android:layout_below="@+id/editTextGreen" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/editTextRed"
+        android:layout_below="@+id/textViewRed"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/textViewRelult"
+        android:layout_alignEnd="@+id/textViewRelult" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/editTextGreen"
+        android:layout_below="@+id/textViewGreen"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/editTextRed"
+        android:layout_alignEnd="@+id/editTextRed" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/editTextBlue"
+        android:layout_below="@+id/textViewBlue"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/textViewColorBlender"
+        android:layout_alignRight="@+id/editTextGreen"
+        android:layout_alignEnd="@+id/editTextGreen" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/calculate"
+        android:id="@+id/buttonCalculate"
+        android:layout_below="@+id/editTextBlue2"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/red_2"
+        android:id="@+id/textViewRed2"
+        android:layout_alignTop="@+id/textViewRed"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/green_2"
+        android:id="@+id/textViewGreen2"
+        android:layout_above="@+id/editTextGreen2"
+        android:layout_alignRight="@+id/buttonCalculate"
+        android:layout_alignEnd="@+id/buttonCalculate" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/blue_2"
+        android:id="@+id/textViewBlue2"
+        android:layout_alignTop="@+id/textViewBlue"
+        android:layout_alignLeft="@+id/textViewGreen2"
+        android:layout_alignStart="@+id/textViewGreen2" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/editTextRed2"
+        android:layout_alignBottom="@+id/editTextRed"
+        android:layout_alignRight="@+id/textViewColorBlender"
+        android:layout_alignEnd="@+id/textViewColorBlender"
+        android:layout_alignLeft="@+id/textViewRed2"
+        android:layout_alignStart="@+id/textViewRed2" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/editTextGreen2"
+        android:layout_above="@+id/textViewBlue"
+        android:layout_alignLeft="@+id/textViewBlue2"
+        android:layout_alignStart="@+id/textViewBlue2"
+        android:layout_alignRight="@+id/editTextRed2"
+        android:layout_alignEnd="@+id/editTextRed2" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/editTextBlue2"
+        android:layout_alignBottom="@+id/editTextBlue"
+        android:layout_alignLeft="@+id/textViewBlue2"
+        android:layout_alignStart="@+id/textViewBlue2"
+        android:layout_alignRight="@+id/editTextGreen2"
+        android:layout_alignEnd="@+id/editTextGreen2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/result"
+        android:id="@+id/textViewRelult"
+        android:layout_below="@+id/buttonCalculate"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>

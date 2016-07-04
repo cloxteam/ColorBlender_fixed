@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ColorBlender</string>
+    <string name="blue">BLUE</string>
+    <string name="green">GREEN</string>
+    <string name="red">RED</string>
+    <string name="color_blender">Color Blender</string>
+    <string name="calculate">Calculate</string>
+    <string name="red_2">RED 2</string>
+    <string name="green_2">GREEN 2</string>
+    <string name="blue_2">BLUE 2</string>
+    <string name="result">Result:</string>
+</resources>
