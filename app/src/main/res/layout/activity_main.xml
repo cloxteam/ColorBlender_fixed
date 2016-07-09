@@ -86,8 +86,7 @@
         android:text="@string/calculate"
         android:id="@+id/buttonCalculate"
         android:layout_below="@+id/editTextBlue2"
-        android:layout_centerHorizontal="true"
-        />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -163,5 +162,14 @@
         android:layout_below="@+id/buttonCalculate"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/show_color"
+        android:id="@+id/buttonShowColor"
+        android:layout_below="@+id/textViewRelult"
+        android:layout_alignRight="@+id/buttonCalculate"
+        android:layout_alignEnd="@+id/buttonCalculate" />
 
 </RelativeLayout>

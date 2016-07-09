@@ -1,6 +1,8 @@
 package com.devcolibry.artya.colorblender;
 
+import android.content.Intent;
 import android.os.Bundle;
+
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputFilter;
@@ -17,6 +19,10 @@ public class MainActivity extends AppCompatActivity {
     private TextView textViewResult;
     private EditText editTextRed, editTextRed2, editTextGreen, editTextGreen2,
            editTextBlue, editTextBlue2;
+
+    private Integer redBlended;
+    private Integer greenBlended;
+    private Integer blueBlended;
 
 
     @Override
@@ -45,53 +51,69 @@ public class MainActivity extends AppCompatActivity {
 
         textViewResult = (TextView) findViewById(R.id.textViewRelult);
 
+
        findViewById(R.id.buttonCalculate).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textViewResult.setText(editTextRed.getText().toString());
-                Integer R1 =  Integer.parseInt(editTextRed.getText().toString());
-                Integer R2 =   Integer.parseInt(editTextRed2.getText().toString());
-                Integer G1 =   Integer.parseInt(editTextGreen.getText().toString());
-                Integer G2 =  Integer.parseInt(editTextBlue2.getText().toString());
-                Integer B1 =  Integer.parseInt(editTextBlue.getText().toString());
-                Integer B2 =  Integer.parseInt(editTextBlue2.getText().toString());
-
-                Integer redBlended = (R1 + R2) / 2;
-                Integer greenBlended = (G1 + G2) / 2;
-                Integer blueBlended = (B1 + B2) / 2;
-
-                /* complete code
-                * ColorResultImagie(redBlended, greenBlended, blueBlended);
-                *
-                *
-                * */
-
-                textViewResult.setText(getString(R.string.red) + " " + String.valueOf(redBlended) + ", " +
-                       getString(R.string.green) + " " + String.valueOf(greenBlended) + ", "
-                        + getString(R.string.blue) + " " + String.valueOf(blueBlended));
+                calculateColor(v);
             }
         });
 
+        findViewById(R.id.buttonShowColor).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startCustomViewActivity(v);
+            }
+        });
     }
 
-  /*  public void onBlending(View view){
-        //get all colors
+    public void calculateColor(View view){
+        CustomView customView = new CustomView(getApplicationContext());
+        //parsing
+        textViewResult.setText(editTextRed.getText().toString());
         Integer R1 =  Integer.parseInt(editTextRed.getText().toString());
         Integer R2 =   Integer.parseInt(editTextRed2.getText().toString());
         Integer G1 =   Integer.parseInt(editTextGreen.getText().toString());
-        Integer G2 =  Integer.parseInt(editTextBlue2.getText().toString());
+        Integer G2 =  Integer.parseInt(editTextGreen2.getText().toString());
         Integer B1 =  Integer.parseInt(editTextBlue.getText().toString());
         Integer B2 =  Integer.parseInt(editTextBlue2.getText().toString());
 
-        //blend
-        Integer redBlended = (R1 + R2) / 2;
-       Integer greenBlended = (G1 + G2) / 2;
-       Integer blueBlended = (B1 + B2) / 2;
+        //blending colors from editText fields
+        redBlended = (R1 + R2) / 2;
+        greenBlended = (G1 + G2) / 2;
+        blueBlended = (B1 + B2) / 2;
 
-       // String red = redBlended.toString();
-       // String green = greenBlended.toString();
-       // String blue = blueBlended.toString();
 
-        textViewResult.setText(String.valueOf(redBlended));
-    }*/
+
+        //need to create getter an setter
+        //send colors to custom View
+        /* this variant not work for me
+
+        customView.setRedBlended(redBlended);
+        customView.setGreenBlended(greenBlended);
+        customView.setBlueBlended(blueBlended);
+*/
+                /* complete code
+                *
+                *
+                *
+                * */
+        //output text
+        textViewResult.setText(getString(R.string.red) + " " + String.valueOf(redBlended) + ", " +
+                getString(R.string.green) + " " + String.valueOf(greenBlended) + ", "
+                + getString(R.string.blue) + " " + String.valueOf(blueBlended));
+
+
+        //better variant
+
+        customView._redBlended = redBlended;
+        customView._greenBlended = greenBlended;
+        customView._blueBlended = blueBlended;
+
+    }
+
+    public void startCustomViewActivity(View view){
+        Intent intent = new Intent(getApplicationContext(), CustomViewActivity.class);
+        startActivity(intent);
+    }
 }

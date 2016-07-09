@@ -9,4 +9,5 @@
     <string name="green_2">GREEN 2</string>
     <string name="blue_2">BLUE 2</string>
     <string name="result">Result:</string>
+    <string name="show_color">Show color</string>
 </resources>
